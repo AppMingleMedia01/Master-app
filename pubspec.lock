@@ -248,6 +248,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.0.1"
+<<<<<<< HEAD
   platform:
     dependency: transitive
     description:
@@ -264,6 +265,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.8"
+=======
+>>>>>>> origin/master
   provider:
     dependency: transitive
     description:
@@ -272,6 +275,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.2"
+<<<<<<< HEAD
   shared_preferences:
     dependency: "direct main"
     description:
@@ -328,6 +332,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+=======
+>>>>>>> origin/master
   sky_engine:
     dependency: transitive
     description: flutter

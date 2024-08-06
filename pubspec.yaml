@@ -40,7 +40,10 @@ dependencies:
   pin_code_fields: ^8.0.1
   http: ^1.2.2
   flutter_bloc: ^8.1.6
+<<<<<<< HEAD
   shared_preferences:
+=======
+>>>>>>> origin/master
 
 dev_dependencies:
   flutter_test:

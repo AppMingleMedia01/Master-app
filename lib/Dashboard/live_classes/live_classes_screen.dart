@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:master_app/Dashboard/live_classes/purchase_screen.dart';
 import 'package:master_app/my_helpers/helps/navigator_help.dart';
 
 // Assuming PurchasePage is defined elsewhere in your project
+=======
+>>>>>>> origin/master
 
 class LiveClassesScreen extends StatelessWidget {
   @override
@@ -19,8 +22,15 @@ class LiveClassesScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () {
+<<<<<<< HEAD
               navigatorPush(SearchScreen(), context: context);
 
+=======
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SearchScreen()),
+              );
+>>>>>>> origin/master
             },
           ),
         ],
@@ -151,7 +161,11 @@ class LiveClassesScreen extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
+<<<<<<< HEAD
               MaterialPageRoute(builder: (context) => PurchasePage()),
+=======
+              MaterialPageRoute(builder: (context) => PurchaseScreen()),
+>>>>>>> origin/master
             );
           },
           style: ElevatedButton.styleFrom(
@@ -284,3 +298,21 @@ class SearchScreen extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+class PurchaseScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Purchase Screen'),
+      ),
+      body: Center(
+        child: Text('This is the purchase screen'),
+      ),
+    );
+  }
+}
+
+>>>>>>> origin/master
