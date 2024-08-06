@@ -11,6 +11,7 @@ showSnackBar(BuildContext context,
       textColor = Colors.white,
       textSize,
     }) {
+
   var snackBar = SnackBar(
       duration: duration,
       elevation: 0,
