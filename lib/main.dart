@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
       // Set the theme of the application
       theme: ThemeData(
@@ -21,19 +21,16 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: mainThemeColor,
         ),
-
         buttonTheme: const ButtonThemeData(
           buttonColor: mainThemeColor,
         ),
-
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: mainThemeColor,
         ),
-        // // You can add more theme customization here
+        // You can add more theme customization here
       ),
+      debugShowCheckedModeBanner: false,  // Add this line to remove the debug banner
       home: const SplashScreen(),
     );
   }
 }
-
-

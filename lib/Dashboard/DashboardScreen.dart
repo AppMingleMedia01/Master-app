@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:master_app/Dashboard/live_classes/live_classes_screen.dart';
+import 'package:master_app/Dashboard/profile/profile_screen.dart';
 import 'package:master_app/utility.dart'; // Ensure to include utility.dart for dashboardContainer widget
 
 class Dashboardscreen extends StatefulWidget {
@@ -15,8 +17,8 @@ class _DashboardscreenState extends State<Dashboardscreen> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
     SearchScreen(),
-    LiveClassesScreen(),
-    ProfileScreen(),
+    LiveClassesScreen(), // Include the Live Classes Screen directly
+    ProfileScreen()
   ];
 
   void _onItemTapped(int index) {
@@ -39,45 +41,101 @@ class _DashboardscreenState extends State<Dashboardscreen> {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Colors.white,
               ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/icons/profile_image.png',
+                    width: 60,
+                    height: 60,
+                  ),
+                  SizedBox(width: 10), // Add spacing between the icon and text
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'ABCDIBD',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ProfileScreen()),
+                          );
+                        },
+                        child: Text(
+                          'View profile',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Home'),
+              leading: Image.asset('assets/icons/online_test.png', width: 24, height: 24),
+              title: Text('Online Test'),
               onTap: () {
-                Navigator.pop(context);
-                _onItemTapped(0);
+                // Handle navigation to Online Test screen
               },
             ),
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text('Profile'),
+              leading: Image.asset('assets/icons/test_results.png', width: 24, height: 24),
+              title: Text('Test Results'),
               onTap: () {
-                Navigator.pop(context);
-                _onItemTapped(3);
+                // Handle navigation to Test Results screen
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
+              leading: Image.asset('assets/icons/homework_assistance.png', width: 24, height: 24),
+              title: Text('Homework Assistance'),
               onTap: () {
-                Navigator.pop(context);
-                // Navigate to Settings screen
+                // Handle navigation to Homework Assistance screen
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text('Logout'),
+              leading: Image.asset('assets/icons/downloads.png', width: 24, height: 24),
+              title: Text('Downloads'),
               onTap: () {
-                Navigator.pop(context);
+                // Handle navigation to Downloads screen
+              },
+            ),
+            ListTile(
+              leading: Image.asset('assets/icons/about.png', width: 24, height: 24),
+              title: Text('About'),
+              onTap: () {
+                // Handle navigation to About screen
+              },
+            ),
+            ListTile(
+              leading: Image.asset('assets/icons/contact_us.png', width: 24, height: 24),
+              title: Text('Contact Us'),
+              onTap: () {
+                // Handle navigation to Contact Us screen
+              },
+            ),
+            ListTile(
+              leading: Image.asset('assets/icons/terms_conditions.png', width: 24, height: 24),
+              title: Text('Term & Conditions'),
+              onTap: () {
+                // Handle navigation to Term & Conditions screen
+              },
+            ),
+            ListTile(
+              leading: Image.asset('assets/icons/logout.png', width: 24, height: 24),
+              title: Text('Log out'),
+              onTap: () {
                 // Handle logout
               },
             ),
@@ -89,9 +147,7 @@ class _DashboardscreenState extends State<Dashboardscreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black,
-
         items: const <BottomNavigationBarItem>[
-
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
@@ -110,7 +166,7 @@ class _DashboardscreenState extends State<Dashboardscreen> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: mainThemeColor,
+        selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
@@ -147,7 +203,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               dashboardContainer(width: width, colorCode: 0xFFFFEDE1, image: 'assets/icons/hometutor.png', name: 'Home Tutor'),
-              dashboardContainer(width: width, colorCode: 0xFFE2F2E2, image: 'assets/icons/homework.png', name: 'Home work'),
+              dashboardContainer(width: width, colorCode: 0xFFE2F2E2, image: 'assets/icons/homework_icon.png', name: 'Home work'),
             ],
           ),
           SizedBox(height: height / 50),
@@ -224,32 +280,4 @@ class SearchScreen extends StatelessWidget {
   }
 }
 
-class LiveClassesScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
 
-        )
-      ],
-    );
-  }
-}
-
-class ProfileScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
-    return Stack(
-      children: [
-        Container(
-          height: height,
-        )
-
-      ],
-    );
-  }
-}
