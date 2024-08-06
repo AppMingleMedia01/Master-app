@@ -2,7 +2,7 @@
 part of 'alert.dart';
 
 
-showSnackBar(
+showSnackBar(BuildContext context,
     message, {
       gravity = ToastGravity.BOTTOM,
       duration = const Duration(milliseconds: 5000),
@@ -26,7 +26,7 @@ showSnackBar(
           style: TextStyle(color: textColor,fontSize: textSize??size_14,fontWeight: FontWeight.w600),
         ),
       ));
-  ScaffoldMessenger.of(MyApp.navigatorKey.currentContext!).showSnackBar(snackBar);
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
 
 showToast(
